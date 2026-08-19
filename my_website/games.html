@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Fred's Games</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<div class="page">
+
+    <h1>GAME ZONE</h1>
+
+    <nav>
+        <a href="index.html">home</a> |
+        <a href="guides.html">guides</a> |
+        <a href="games.html">games</a> |
+        <a href="links.html">links</a>
+    </nav>
+
+    <div class="game">
+
+        <h2>Guess the Number</h2>
+
+        <p>
+            I'm thinking of a number between 1 and 100.
+        </p>
+
+        <input id="guess" type="number">
+
+        <button onclick="checkGuess()">Guess</button>
+
+        <p id="guessResult">
+            Good luck.
+        </p>
+
+    </div>
+
+    <div class="game">
+
+        <h2>Pointless Clicker</h2>
+
+        <button onclick="clickCount()">CLICK</button>
+
+        <p>
+            Clicks: <span id="clicks">0</span>
+        </p>
+
+    </div>
+
+    <div class="game">
+
+        <h2>Reaction Test</h2>
+
+        <p id="reactionText">
+            Press Start.
+        </p>
+
+        <div id="reactionBox" onclick="reactionClick()">
+            WAIT...
+        </div>
+
+        <button onclick="startReaction()">
+            Start
+        </button>
+
+    </div>
+
+</div>
+
+<script src="js/games.js"></script>
+
+</body>
+</html>

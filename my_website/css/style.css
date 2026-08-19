@@ -1,0 +1,155 @@
+body {
+    background: #181a1b;
+    color: #d8d8d8;
+    font-family: Verdana, Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+}
+
+.page {
+    width: 850px;
+    margin: 25px auto;
+    padding: 20px;
+    background: #222526;
+    border: 2px solid #59636b;
+    box-shadow: 0 0 15px #000;
+}
+
+h1 {
+    color: #d7a7ff;
+}
+
+h2 {
+    color: #8fd3c7;
+}
+
+h3 {
+    color: #b9a7ff;
+}
+
+nav {
+    padding: 10px;
+    margin: 15px 0;
+    border: 1px dashed #59636b;
+    background: #1e2122;
+}
+
+nav a {
+    color: #9fc5ff;
+    text-decoration: none;
+}
+
+nav a:hover {
+    color: #d7a7ff;
+}
+
+a {
+    color: #9fc5ff;
+}
+
+a:hover {
+    color: #d7a7ff;
+}
+
+.box {
+    margin: 20px 0;
+    padding: 18px;
+    border: 1px dashed #59636b;
+    background: #1e2122;
+}
+
+.game {
+    padding: 15px;
+    margin: 15px 0;
+    border: 1px dashed #59636b;
+    background: #191b1c;
+}
+
+marquee {
+    background: #292e31;
+    color: #b8c7d1;
+    border: 1px solid #59636b;
+    padding: 6px;
+}
+
+.gif {
+    margin: 10px;
+    vertical-align: middle;
+}
+
+button {
+    background: #292e31;
+    color: #ddd;
+    border: 1px solid #777;
+    padding: 8px 14px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #3a4043;
+}
+
+input {
+    background: #111;
+    color: #ddd;
+    border: 1px solid #666;
+    padding: 7px;
+}
+
+code {
+    background: #111;
+    color: #b8e0d2;
+    padding: 3px 6px;
+}
+
+pre {
+    background: #111;
+    color: #b8e0d2;
+    padding: 15px;
+    text-align: left;
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    border: 1px solid #444;
+    padding: 8px;
+}
+
+th {
+    background: #292e31;
+    color: #8fd3c7;
+}
+
+#reactionBox {
+    width: 250px;
+    height: 120px;
+    margin: 15px auto;
+    background: #292e31;
+    border: 2px solid #555;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.blink {
+    animation: blink 1.2s steps(1) infinite;
+}
+
+@keyframes blink {
+    50% {
+        opacity: 0;
+    }
+}
+
+.footer {
+    color: #70777c;
+    font-size: 11px;
+    margin-top: 30px;
+}
