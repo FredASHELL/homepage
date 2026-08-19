@@ -1,6 +1,6 @@
-/* =========================
-   SECRET CLICKER
-   ========================= */
+// =========================
+// SECRET CLICKER
+// =========================
 
 let clicks = 0;
 
@@ -8,7 +8,7 @@ const clickButton = document.getElementById("clickButton");
 const clickCounter = document.getElementById("clicks");
 const secretMessage = document.getElementById("secretMessage");
 
-if (clickButton) {
+if (clickButton && clickCounter && secretMessage) {
 
     clickButton.addEventListener("click", function () {
 
@@ -28,8 +28,8 @@ if (clickButton) {
 
         if (clicks >= 100) {
             secretMessage.innerHTML =
-                "You found something! " +
-                "<a href='secret.html'>GO HERE.</a>";
+                'You found something! ' +
+                '<a href="secret.html">GO HERE.</a>';
         }
 
     });
@@ -37,20 +37,17 @@ if (clickButton) {
 }
 
 
-/* =========================
-   GUESS THE NUMBER
-   ========================= */
+// =========================
+// GUESS THE NUMBER
+// =========================
 
 let secretNumber =
     Math.floor(Math.random() * 100) + 1;
 
 function checkGuess() {
 
-    const input =
-        document.getElementById("guess");
-
-    const result =
-        document.getElementById("guessResult");
+    const input = document.getElementById("guess");
+    const result = document.getElementById("guessResult");
 
     if (!input || !result) {
         return;
@@ -59,8 +56,7 @@ function checkGuess() {
     const guess = Number(input.value);
 
     if (!guess) {
-        result.textContent =
-            "Enter a number first.";
+        result.textContent = "Enter a number first.";
         return;
     }
 
@@ -74,53 +70,27 @@ function checkGuess() {
 
     } else if (guess < secretNumber) {
 
-        result.textContent =
-            "Too low.";
+        result.textContent = "Too low.";
 
     } else {
 
-        result.textContent =
-            "Too high.";
+        result.textContent = "Too high.";
+
     }
 }
 
 
-/* =========================
-   GAME CLICKER
-   ========================= */
-
-let gameClicks = 0;
-
-function clickCount() {
-
-    const counter =
-        document.getElementById("clicks");
-
-    if (!counter) {
-        return;
-    }
-
-    gameClicks++;
-
-    counter.textContent =
-        gameClicks;
-}
-
-
-/* =========================
-   REACTION TEST
-   ========================= */
+// =========================
+// REACTION TEST
+// =========================
 
 let reactionReady = false;
 let reactionStart = 0;
 
 function startReaction() {
 
-    const box =
-        document.getElementById("reactionBox");
-
-    const text =
-        document.getElementById("reactionText");
+    const box = document.getElementById("reactionBox");
+    const text = document.getElementById("reactionText");
 
     if (!box || !text) {
         return;
@@ -148,11 +118,8 @@ function startReaction() {
 
 function reactionClick() {
 
-    const box =
-        document.getElementById("reactionBox");
-
-    const text =
-        document.getElementById("reactionText");
+    const box = document.getElementById("reactionBox");
+    const text = document.getElementById("reactionText");
 
     if (!box || !text) {
         return;
@@ -166,8 +133,7 @@ function reactionClick() {
         return;
     }
 
-    const time =
-        Date.now() - reactionStart;
+    const time = Date.now() - reactionStart;
 
     box.textContent = time + " ms";
     text.textContent = "Nice reaction!";
