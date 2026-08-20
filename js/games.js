@@ -2,6 +2,8 @@
 // SECRET CLICKER
 // =========================
 
+alert('game.jsis working!')
+
 let clicks = 0;
 
 const clickButton = document.getElementById("clickButton");
