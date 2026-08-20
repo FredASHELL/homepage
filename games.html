@@ -3,13 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <title>Fred's Games</title>
-
     <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
 
 <div class="page">
+
+    <marquee scrollamount="4">
+        ★ GAME ZONE ★
+    </marquee>
 
     <h1>GAME ZONE</h1>
 
@@ -19,6 +22,7 @@
         <a href="games.html">games</a> |
         <a href="links.html">links</a>
     </nav>
+
 
     <div class="game">
 
@@ -30,7 +34,9 @@
 
         <input id="guess" type="number">
 
-        <button onclick="checkGuess()">Guess</button>
+        <button onclick="checkGuess()">
+            Guess
+        </button>
 
         <p id="guessResult">
             Good luck.
@@ -38,17 +44,29 @@
 
     </div>
 
+
     <div class="game">
 
         <h2>Pointless Clicker</h2>
 
-        <button onclick="clickCount()">CLICK</button>
-
         <p>
-            Clicks: <span id="clicks">0</span>
+            Click this 100 times.
+            There is absolutely no reason to do this.
         </p>
 
+        <button onclick="clickCount()">
+            CLICK
+        </button>
+
+        <p>
+            Clicks:
+            <span id="clicks">0</span>
+        </p>
+
+        <p id="secretMessage"></p>
+
     </div>
+
 
     <div class="game">
 
@@ -70,7 +88,117 @@
 
 </div>
 
-<script src="js/games.js"></script>
+
+<script>
+
+let clickTotal = 0;
+
+function clickCount() {
+
+    clickTotal++;
+
+    document.getElementById("clicks").textContent = clickTotal;
+
+    if (clickTotal === 50) {
+        document.getElementById("secretMessage").textContent =
+            "Halfway there. Why are you doing this?";
+    }
+
+    if (clickTotal === 75) {
+        document.getElementById("secretMessage").textContent =
+            "Seriously?";
+    }
+
+    if (clickTotal >= 100) {
+        document.getElementById("secretMessage").innerHTML =
+            'You found something! <a href="secret.html">GO HERE.</a>';
+    }
+}
+
+
+let secretNumber =
+    Math.floor(Math.random() * 100) + 1;
+
+function checkGuess() {
+
+    const guess =
+        Number(document.getElementById("guess").value);
+
+    const result =
+        document.getElementById("guessResult");
+
+    if (guess === secretNumber) {
+
+        result.textContent = "🎉 Correct!";
+
+        secretNumber =
+            Math.floor(Math.random() * 100) + 1;
+
+    } else if (guess < secretNumber) {
+
+        result.textContent = "Too low.";
+
+    } else {
+
+        result.textContent = "Too high.";
+    }
+}
+
+
+let reactionReady = false;
+let reactionStart = 0;
+
+function startReaction() {
+
+    const box =
+        document.getElementById("reactionBox");
+
+    const text =
+        document.getElementById("reactionText");
+
+    reactionReady = false;
+
+    box.textContent = "WAIT...";
+    text.textContent = "Wait...";
+
+    setTimeout(function () {
+
+        reactionReady = true;
+        reactionStart = Date.now();
+
+        box.textContent = "CLICK NOW!";
+        text.textContent = "GO!";
+
+    }, Math.floor(Math.random() * 3000) + 1500);
+}
+
+
+function reactionClick() {
+
+    const box =
+        document.getElementById("reactionBox");
+
+    const text =
+        document.getElementById("reactionText");
+
+    if (!reactionReady) {
+
+        box.textContent = "Too early!";
+        text.textContent = "You jumped the gun.";
+
+        return;
+    }
+
+    const time =
+        Date.now() - reactionStart;
+
+    box.textContent = time + " ms";
+    text.textContent = "Nice reaction!";
+
+    reactionReady = false;
+}
+
+</script>
 
 </body>
 </html>
