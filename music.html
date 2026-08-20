@@ -6,8 +6,7 @@
 
     <link rel="stylesheet" href="css/style.css">
 
-    <!-- MIDI Player -->
-    <script src="https://cdn.jsdelivr.net/combine/npm/tone@14.7.58,npm/@magenta/music@1.23.1/es6/core.js,npm/html-midi-player@1.5.0"></script>
+    <script src="https://cdn.jsdelivr.net/combine/npm/tone@15.1.22/build/Tone.min.js,npm/@magenta/music@1.23.1/es6/core.js,npm/html-midi-player@1.5.0"></script>
 </head>
 
 <body>
@@ -33,12 +32,11 @@
         <h2>Take Me to the River</h2>
 
         <p>
-            One MIDI. One player. Absolutely no reason for
-            this website to have a MIDI player.
+            One of the original inhabitants of the MIDI Corner.
         </p>
 
         <midi-player
-            src="music/TakeMeToTheRiver.mid"
+            src="./music/TakeMeToTheRiver.mid"
             sound-font>
         </midi-player>
 
@@ -46,14 +44,38 @@
 
     <div class="box">
 
-        <h2>That's it.</h2>
+        <h2>Get This</h2>
 
         <p>
-            There is currently exactly one song here.
+            Things have escalated slightly.
+        </p>
+
+        <midi-player
+            src="./music/GetThis.mid"
+            sound-font>
+        </midi-player>
+
+    </div>
+
+    <div class="box">
+
+        <h2>MIDI Archive</h2>
+
+        <p>
+            More MIDI files may appear here eventually.
         </p>
 
         <p>
-            More may appear eventually™.
+            Current collection: <strong>2 MIDIs</strong>
+        </p>
+
+    </div>
+
+    <div class="box">
+
+        <p>
+            🎹 MIDI technology: making websites unnecessarily
+            complicated since 1983.
         </p>
 
     </div>
@@ -62,7 +84,7 @@
 
     <p class="footer">
         Fred's MIDI Corner<br>
-        Powered by unnecessarily complicated web technology
+        Please enjoy the noises.
     </p>
 
 </div>
